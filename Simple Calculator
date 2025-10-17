@@ -1,0 +1,45 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+ class SimpleCalculator
+ {
+ private:
+    double a;
+    double  b;
+ public:
+ void calculate(char op ,double num1, double num2)
+ {
+    a=num1;
+    b=num2;
+    if(op=='+') cout<< a+b;
+    else if(op=='-')
+    {
+        cout<<a-b;
+    }
+    else if(op=='*')
+    {
+        cout<<a*b;
+    }
+    else if(op=='/')
+    {
+       if(b!=0) cout<<a/b;
+
+       else cout<<"Undefined";
+    }
+    else{
+        cout<<"Invalid Operator";
+    }
+ }   
+ };
+ int main()
+ {
+    double number1,number2;
+    cout<<"Enter two numbers :";
+    cin>>number1>>number2;
+    char s;
+    cout<<"Enter the operation:";
+    cin>>s;
+    SimpleCalculator x;
+    x.calculate(s,number1,number2);
+    return 0;
+ }
