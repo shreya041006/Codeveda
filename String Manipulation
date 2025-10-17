@@ -1,0 +1,71 @@
+#include<iostream>
+#include <bits/stdc++.h>
+using namespace std;
+class Strings
+{
+private:
+      string s;
+public:
+    void palindrome(string b)
+    {
+        s=b;
+        int q = s.size();
+        bool found =true;
+        for(int i=0;i<q/2;i++)
+        {
+            if(s[i]!=s[q-1-i])
+            {
+                found =false;
+            }
+        }
+        if(found)
+        {
+            cout<<"String is palindrome";
+        }
+        else{
+            cout<<"String is not palindrome";
+        }
+    }
+    void reversestr (string d)
+    {
+        s=d;
+        int q = d.size();
+        for(int i=0;i<q/2;i++)
+        {
+            char temp=s[i];
+            s[i]=s[q-1-i];
+            s[q-1-i]=temp;
+        }
+        cout<<"String after reverse"<<s;
+    }
+    int countvowels(string t)
+    {
+        s=t;
+        int m =0;
+        for(int i=0;i<t.size();i++)
+        {
+            if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+            {
+                m++;
+            }
+        }
+        return m;
+    }
+};
+
+int main()
+{
+    string n;
+    cout << "Enter the string in small letters: ";
+    cin >> n;
+
+
+    Strings k;
+    k.palindrome(n);
+    cout<<endl;
+    k.reversestr(n);
+    cout<<endl;
+    cout<<"Number of vowels present in string "<<k.countvowels(n);
+    cout<<endl;
+    return 0;
+}
